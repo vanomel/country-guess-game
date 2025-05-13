@@ -1417,7 +1417,7 @@
       "type": "Feature",
       "id": "ATA",
       "properties": {
-        "name": "Antarctica"
+        "name": "Антарктика"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -4085,7 +4085,7 @@
       "type": "Feature",
       "id": "ATF",
       "properties": {
-        "name": "French Southern and Antarctic Lands"
+        "name": "Французские Южные и Антарктические Территории"
       },
       "geometry": {
         "type": "Polygon",
@@ -6185,7 +6185,7 @@
       "type": "Feature",
       "id": "BHS",
       "properties": {
-        "name": "The Bahamas"
+        "name": "Багамы"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -6679,7 +6679,7 @@
       "type": "Feature",
       "id": "BMU",
       "properties": {
-        "name": "Bermuda"
+        "name": "Бермуды"
       },
       "geometry": {
         "type": "Polygon",
@@ -13531,7 +13531,7 @@
       "type": "Feature",
       "id": "CIV",
       "properties": {
-        "name": "Ivory Coast"
+        "name": "Кот-д'Ивуар"
       },
       "geometry": {
         "type": "Polygon",
@@ -13987,7 +13987,7 @@
       "type": "Feature",
       "id": "COD",
       "properties": {
-        "name": "Democratic Republic of the Congo"
+        "name": "Демократическая Республика Конго"
       },
       "geometry": {
         "type": "Polygon",
@@ -14489,7 +14489,7 @@
       "type": "Feature",
       "id": "COG",
       "properties": {
-        "name": "Republic of the Congo"
+        "name": "Республика Конго"
       },
       "geometry": {
         "type": "Polygon",
@@ -15453,7 +15453,7 @@
       "type": "Feature",
       "id": "-99",
       "properties": {
-        "name": "Northern Cyprus"
+        "name": "Северный Кипр"
       },
       "geometry": {
         "type": "Polygon",
@@ -17857,7 +17857,7 @@
       "type": "Feature",
       "id": "FLK",
       "properties": {
-        "name": "Falkland Islands"
+        "name": "Фолклендские острова"
       },
       "geometry": {
         "type": "Polygon",
@@ -19129,7 +19129,7 @@
       "type": "Feature",
       "id": "GNB",
       "properties": {
-        "name": "Guinea Bissau"
+        "name": "Гвинея-Бисау"
       },
       "geometry": {
         "type": "Polygon",
@@ -20193,7 +20193,7 @@
       "type": "Feature",
       "id": "GUF",
       "properties": {
-        "name": "French Guiana"
+        "name": "Французская Гвинея"
       },
       "geometry": {
         "type": "Polygon",
@@ -25207,7 +25207,7 @@
       "type": "Feature",
       "id": "CS-KM",
       "properties": {
-        "name": "Kosovo"
+        "name": "Косово"
       },
       "geometry": {
         "type": "Polygon",
@@ -27581,7 +27581,7 @@
       "type": "Feature",
       "id": "MKD",
       "properties": {
-        "name": "Macedonia"
+        "name": "Северная Македония"
       },
       "geometry": {
         "type": "Polygon",
@@ -29835,7 +29835,7 @@
       "type": "Feature",
       "id": "NCL",
       "properties": {
-        "name": "New Caledonia"
+        "name": "Новая Каледония"
       },
       "geometry": {
         "type": "Polygon",
@@ -33507,7 +33507,7 @@
       "type": "Feature",
       "id": "PRI",
       "properties": {
-        "name": "Puerto Rico"
+        "name": "Пуэрто-Рико"
       },
       "geometry": {
         "type": "Polygon",
@@ -36797,7 +36797,7 @@
       "type": "Feature",
       "id": "ESH",
       "properties": {
-        "name": "Western Sahara"
+        "name": "Западная Сахара"
       },
       "geometry": {
         "type": "Polygon",
@@ -38027,7 +38027,7 @@
       "type": "Feature",
       "id": "SLB",
       "properties": {
-        "name": "Solomon Islands"
+        "name": "Соломоновы Острова"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -38403,7 +38403,7 @@
       "type": "Feature",
       "id": "-99",
       "properties": {
-        "name": "Somaliland"
+        "name": "Сомалиленд"
       },
       "geometry": {
         "type": "Polygon",
@@ -38671,7 +38671,7 @@
       "type": "Feature",
       "id": "SRB",
       "properties": {
-        "name": "Republic of Serbia"
+        "name": "Сербия"
       },
       "geometry": {
         "type": "Polygon",
@@ -39535,7 +39535,7 @@
       "type": "Feature",
       "id": "SWZ",
       "properties": {
-        "name": "Swaziland"
+        "name": "Эсватини"
       },
       "geometry": {
         "type": "Polygon",
@@ -40729,7 +40729,7 @@
       "type": "Feature",
       "id": "TLS",
       "properties": {
-        "name": "East Timor"
+        "name": "Восточный Тимор"
       },
       "geometry": {
         "type": "Polygon",
@@ -40787,7 +40787,7 @@
       "type": "Feature",
       "id": "TTO",
       "properties": {
-        "name": "Trinidad and Tobago"
+        "name": "Тринидад и Тобаго"
       },
       "geometry": {
         "type": "Polygon",
@@ -41309,7 +41309,7 @@
       "type": "Feature",
       "id": "TZA",
       "properties": {
-        "name": "United Republic of Tanzania"
+        "name": "Танзания"
       },
       "geometry": {
         "type": "Polygon",
@@ -44771,7 +44771,7 @@
       "type": "Feature",
       "id": "VUT",
       "properties": {
-        "name": "Vanuatu"
+        "name": "Вануату"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -44839,7 +44839,7 @@
       "type": "Feature",
       "id": "PSE",
       "properties": {
-        "name": "West Bank"
+        "name": "Западный берег реки Иордан"
       },
       "geometry": {
         "type": "Polygon",
