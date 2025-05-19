@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Где регион?</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    #map { height: 100vh; }
+    #info {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      padding: 10px;
+      z-index: 1000;
+      font-family: sans-serif;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+  <div id="info">
+    Найди регион: <span id="target-Region">...</span><br>
+    Счёт: <span id="score">0</span>
+  </div>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map', {
+      zoomControl: false,
+      attributionControl: false
+    }).setView([20, 0], 2);
+
+    L.tileLayer('', {
+      maxZoom: 5
+    }).addTo(map);
+
+    let geojsonLayer;
+    let Regions = [];
+    let remainingRegions = [];
+    let targetRegion = null;
+    let score = 0;
+    let targetLayer = null;
+
+    const scoreEl = document.getElementById('score');
+    const targetEl = document.getElementById('target-Region');
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    function nextRegion() {
+      if (remainingRegions.length === 0) {
+        alert('Игра окончена! Итоговый счёт: ' + score);
+        return;
+      }
+      //if (targetLayer) geojsonLayer.resetStyle(targetLayer);
+
+      targetRegion = remainingRegions.pop();
+      targetEl.textContent = targetRegion.properties.region;
+
+      // Найти слой, соответствующий целевой стране
+      geojsonLayer.eachLayer(layer => {
+        if (layer.feature.properties.region === targetRegion.properties.region) {
+          targetLayer = layer;
+        }
+      });
+    }
+
+    function onEachFeature(feature, layer) {
+      layer.on({
+        click: function () {
+          if (!targetRegion || !targetRegion.properties || !feature.properties) return;
+
+          if (feature.properties.region === targetRegion.properties.region) {
+            layer.setStyle({ fillColor: 'green', fillOpacity: 0.7 });
+            score += 10;
+            scoreEl.textContent = score;
+            setTimeout(() => {
+              // geojsonLayer.resetStyle(layer);
+              nextRegion();
+            }, 700);
+          } else {
+            // layer.setStyle({ fillColor: 'red', fillOpacity: 0.7 });
+            score -= 5;
+            scoreEl.textContent = score;
+
+            // Подсветка правильного ответа
+            if (targetLayer) {
+              targetLayer.setStyle({ fillColor: 'red', fillOpacity: 0.7 });
+              targetLayer.bindTooltip(targetRegion.properties.region, {
+                 permanent: false,      // true — если нужно постоянно показывать
+                 direction: "auto",     // расположение подсказки
+                sticky: true           // «прилипает» к курсору
+              });
+              setTimeout(() => {
+                //geojsonLayer.resetStyle(layer);
+                //geojsonLayer.resetStyle(targetLayer);
+                nextRegion();
+              }, 1500);
+            } else {
+              setTimeout(() => {
+                //geojsonLayer.resetStyle(layer);
+                nextRegion();
+              }, 1500);
+            }
+          }
+        }
+      });
+    }
+
+    fetch('russia_regions.geojson')
+      .then(res => {
+        if (!res.ok) throw new Error('Не удалось загрузить файл Regions.geo.json');
+        return res.json();
+      })
+      .then(data => {
+        regions = data.features;
+        shuffle(regions);
+        remainingRegions = [...regions];
+
+        geojsonLayer = L.geoJSON(regions, {
+          style: {
+            color: '#555',
+            weight: 1,
+            fillOpacity: 0.1
+          },
+          onEachFeature: onEachFeature
+        }).addTo(map);
+
+        nextRegion();
+      })
+      .catch(err => {
+        alert('Ошибка загрузки геоданных: ' + err);
+        console.error(err);
+      });
+  </script>
+</body>
+</html>
